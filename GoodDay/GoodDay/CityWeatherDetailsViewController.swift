@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  CityWeatherDetailsViewController.swift
 //  GoodDay
 //
 //  Created by Yi JIANG on 20/2/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class CityWeatherDetailsViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 

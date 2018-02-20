@@ -26,7 +26,23 @@ class GoodDayTests: XCTestCase {
         super.tearDown()
     }
     
-    func testApiClientSuccess(){
+    func testSuccessApiServiceWithCorrectApi(){
+        let apiClient = ApiClient()
+        apiClient.fetchOWMWeather(.weather(4163971)).subscribe(onNext: { status in
+            switch status {
+            case .success(let apiResponse):
+                XCTAssertEqual(apiResponse.name, "Melbourne" )
+                XCTAssertEqual(apiResponse.sys?.country, "US" )
+                XCTAssertEqual(apiResponse.coord?.lat, -80.61 )
+                XCTAssertEqual(apiResponse.coord?.lon, 28.08 )
+            //MARK: We can test more key:value to verify the decode logic is right.
+            case .fail(let error):
+                print(error.errorDescription ?? "Faild to load weather data")
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    func testDecodeApiClientSuccessByMockData(){
         let mockApiClient = MockApiClient()
         mockApiClient.jsonFileName = .successData
         MockApiClient().fetchOWMWeather(ApiConfig.weather(4163971))
@@ -34,7 +50,7 @@ class GoodDayTests: XCTestCase {
                 switch status {
                 case .success(let apiResponse):
                     XCTAssertEqual(apiResponse.main?.temp, 22.82)
-                    XCTAssertEqual(apiResponse.weather?.first?.description , "clear sky")
+                    XCTAssertEqual(apiResponse.weather?.first?.descriptionField , "clear sky")
                     XCTAssertEqual(apiResponse.clouds?.all, 1)
                 //MARK: We can test more key:value to verify the decode logic is right.
                 case .fail(let error):
@@ -44,7 +60,7 @@ class GoodDayTests: XCTestCase {
             .disposed(by: disposeBag)
     }
     
-    func testInvalidApi(){
+    func testDecodeInvalidApiKeyByMockData(){
         let mockApiClient = MockApiClient()
         mockApiClient.jsonFileName = .invalidApiKey
         mockApiClient.fetchOWMWeather(ApiConfig.weather(4163971)).subscribe(onNext: { status in
@@ -59,7 +75,7 @@ class GoodDayTests: XCTestCase {
         
     }
     
-    func testCityNotFound(){
+    func testDecodeCityNotFoundByMockData(){
         let mockApiClient = MockApiClient()
         mockApiClient.jsonFileName = .cityNotFound
         mockApiClient.fetchOWMWeather(ApiConfig.weather(0)).subscribe(onNext: { status in
