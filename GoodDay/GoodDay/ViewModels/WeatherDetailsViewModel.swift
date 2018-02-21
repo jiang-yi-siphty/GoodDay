@@ -26,21 +26,22 @@ class WeatherViewModel {
     var tempMin = Variable<String>("0")
     var tempMax = Variable<String>("0")
     var pressure = Variable<String>("0")
-    var isHiding = Variable<Bool>(false)
+    var isIndicatorHiding = Variable<Bool>(false)
     var isAlertShowing = Variable<Bool>(false)
     
     init(_ apiService: ApiService, with cityCode: Int) {
-        isHiding.value = false
+        isIndicatorHiding.value = false
         bindMainWeatherDetails()
         bindSystemCountry()
         bindWeatherDescription()
+        bindCityName()
         self.cityCode.value = cityCode
         fetchWeather(apiService)
     }
     
     fileprivate func fetchWeather(_ apiService: ApiService) {
         apiService.fetchOWMWeather(ApiConfig.weather(cityCode.value)).subscribe(onNext: { status in
-            self.isHiding.value = true
+            self.isIndicatorHiding.value = true
             switch status {
             case .success(let apiResponse):
                 self.apiResponse.value = apiResponse
@@ -76,6 +77,14 @@ class WeatherViewModel {
         apiResponse.asObservable().subscribe(onNext: { apiResponse in
             if let country = apiResponse?.sys?.country {
                 self.country.value = country
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    fileprivate func bindCityName() {
+        apiResponse.asObservable().subscribe(onNext: { apiResponse in
+            if let cityName = apiResponse?.name {
+                self.city.value = cityName
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }

@@ -16,17 +16,20 @@ class CityWeatherTableViewCell: UITableViewCell {
     @IBOutlet var temperatureLabel: UILabel!
     @IBOutlet var loadingActivityIndicator: UIActivityIndicatorView!
     
-    var cityId: Int = 0
+    var cityId: Int = 0 {
+        didSet {
+            configViewModel()
+            setupBinds()
+        }
+    }
     var viewModel: WeatherViewModel? {
         didSet {
-            setupBinds()
         }
     }
     fileprivate let disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configViewModel()
         loadingActivityIndicator.startAnimating()
         loadingActivityIndicator.isHidden = false
     }
@@ -35,11 +38,6 @@ class CityWeatherTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func configureCell(_ apiResponse: ApiResponse?) {
-        guard let weather = apiResponse?.weather?.first else { return }
-        
     }
     
     func configViewModel() {
@@ -55,7 +53,7 @@ class CityWeatherTableViewCell: UITableViewCell {
             .bind(to: temperatureLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel?.isHiding.asObservable()
+        viewModel?.isIndicatorHiding.asObservable()
             .bind(to: loadingActivityIndicator.rx.isHidden)
             .disposed(by: disposeBag)
     }

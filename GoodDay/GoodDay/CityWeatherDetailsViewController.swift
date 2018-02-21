@@ -10,9 +10,15 @@ import UIKit
 
 class CityWeatherDetailsViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    @IBOutlet var cityWeatherDetailsView: CityWeatherDetailsView!
+    
+    public var navigationBarTitleString: String? 
+    public var cityId: Int? {
+        didSet {
+            cityWeatherDetailsView.cit
+        }
+    }
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
@@ -20,6 +26,8 @@ class CityWeatherDetailsViewController: UIViewController {
                 label.text = detail.timestamp!.description
             }
         }
+        title = navigationBarTitleString
+        navigationItem.backBarButtonItem?.title = ""
     }
 
     override func viewDidLoad() {
