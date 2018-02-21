@@ -21,7 +21,7 @@ class ApiResponse : NSObject, NSCoding, Mappable{
 	var id : Int?
 	var main : Main?
 	var name : String?
-	var sys : Sy?
+	var sys : Sys?
 	var visibility : Int?
 	var weather : [Weather]?
 	var wind : Wind?
@@ -64,7 +64,7 @@ class ApiResponse : NSObject, NSCoding, Mappable{
          id = aDecoder.decodeObject(forKey: "id") as? Int
          main = aDecoder.decodeObject(forKey: "main") as? Main
          name = aDecoder.decodeObject(forKey: "name") as? String
-         sys = aDecoder.decodeObject(forKey: "sys") as? Sy
+         sys = aDecoder.decodeObject(forKey: "sys") as? Sys
          visibility = aDecoder.decodeObject(forKey: "visibility") as? Int
          weather = aDecoder.decodeObject(forKey: "weather") as? [Weather]
          wind = aDecoder.decodeObject(forKey: "wind") as? Wind

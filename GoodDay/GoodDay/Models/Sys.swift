@@ -11,7 +11,7 @@ import Foundation
 import ObjectMapper
 
 
-class Sy : NSObject, NSCoding, Mappable{
+class Sys : NSObject, NSCoding, Mappable{
 
 	var country : String?
 	var id : Int?
@@ -22,7 +22,7 @@ class Sy : NSObject, NSCoding, Mappable{
 
 
 	class func newInstance(map: Map) -> Mappable?{
-		return Sy()
+		return Sys()
 	}
 	required init?(map: Map){}
 	private override init(){}

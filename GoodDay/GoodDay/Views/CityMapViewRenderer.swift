@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-class CityMapViewRenderer: UIView {
+class CityMapViewRenderer: MKMapView {
 
     /*
     // Only override draw() if you perform custom drawing.
