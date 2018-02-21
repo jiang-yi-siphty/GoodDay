@@ -15,7 +15,8 @@ class CityWeatherDetailsViewController: UIViewController {
     public var navigationBarTitleString: String? 
     public var cityId: Int? {
         didSet {
-            cityWeatherDetailsView.cit
+            guard let cityId = cityId else { return }
+            cityWeatherDetailsView.cityId = cityId
         }
     }
     

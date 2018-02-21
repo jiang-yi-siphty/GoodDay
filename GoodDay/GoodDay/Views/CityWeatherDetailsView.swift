@@ -21,5 +21,10 @@ class CityWeatherDetailsView: UIView {
     @IBOutlet var windSpeedLabel: UILabel!
     @IBOutlet var weatherDescription: UILabel!
     
+    public var cityId: Int? {
+        didSet {
+            //Start using ViewModel to reload current weather details.
+        }
+    }
     
 }
