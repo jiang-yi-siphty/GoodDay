@@ -83,16 +83,11 @@
 		A2882FAA203C5D6900D66F0D /* CityWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FA9203C5D6900D66F0D /* CityWeatherTableViewCell.swift */; };
 		A2882FAB203C5D6900D66F0D /* CityWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FA9203C5D6900D66F0D /* CityWeatherTableViewCell.swift */; };
 		A2882FAC203C5D6900D66F0D /* CityWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FA9203C5D6900D66F0D /* CityWeatherTableViewCell.swift */; };
-		A2882FAE203C5F5000D66F0D /* CityMapViewRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FAD203C5F5000D66F0D /* CityMapViewRenderer.swift */; };
-		A2882FAF203C5F5000D66F0D /* CityMapViewRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FAD203C5F5000D66F0D /* CityMapViewRenderer.swift */; };
-		A2882FB0203C5F5000D66F0D /* CityMapViewRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FAD203C5F5000D66F0D /* CityMapViewRenderer.swift */; };
 		A2882FB2203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FB1203C5FA600D66F0D /* CityWeatherDetailsView.swift */; };
 		A2882FB3203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FB1203C5FA600D66F0D /* CityWeatherDetailsView.swift */; };
 		A2882FB4203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FB1203C5FA600D66F0D /* CityWeatherDetailsView.swift */; };
-		A2882FBE203D834200D66F0D /* CityMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2882FBD203D834200D66F0D /* CityMapView.xib */; };
-		A2882FBF203D834200D66F0D /* CityMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2882FBD203D834200D66F0D /* CityMapView.xib */; };
-		A2882FC0203D834200D66F0D /* CityMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2882FBD203D834200D66F0D /* CityMapView.xib */; };
 		A2882FC6203DAAF500D66F0D /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2882FC5203DAAF500D66F0D /* WeatherListTableViewController.swift */; };
+		A2882FD4203F21E300D66F0D /* LoadingWeatherIndicator.gif in Resources */ = {isa = PBXBuildFile; fileRef = A2882FD3203F21E300D66F0D /* LoadingWeatherIndicator.gif */; };
 		F74D450A12D4144424E561C0 /* Pods_GoodDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4C54C7C2E6E3F1447849A6 /* Pods_GoodDay.framework */; };
 /* End PBXBuildFile section */
 
@@ -173,10 +168,9 @@
 		A2882F9F203C467600D66F0D /* MockCityNotFound.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockCityNotFound.json; sourceTree = "<group>"; };
 		A2882FA5203C5BDB00D66F0D /* WeatherDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewModel.swift; sourceTree = "<group>"; };
 		A2882FA9203C5D6900D66F0D /* CityWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherTableViewCell.swift; sourceTree = "<group>"; };
-		A2882FAD203C5F5000D66F0D /* CityMapViewRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewRenderer.swift; sourceTree = "<group>"; };
 		A2882FB1203C5FA600D66F0D /* CityWeatherDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailsView.swift; sourceTree = "<group>"; };
-		A2882FBD203D834200D66F0D /* CityMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityMapView.xib; sourceTree = "<group>"; };
 		A2882FC5203DAAF500D66F0D /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
+		A2882FD3203F21E300D66F0D /* LoadingWeatherIndicator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoadingWeatherIndicator.gif; sourceTree = "<group>"; };
 		B9C2C33EEFB81BBDD2F8CB01 /* Pods_GoodDayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodDayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4C54C7C2E6E3F1447849A6 /* Pods_GoodDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -310,6 +304,7 @@
 		A27E893D203C309C000DB52D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				A2882FD3203F21E300D66F0D /* LoadingWeatherIndicator.gif */,
 				A27E8CA0203C312E000DB52D /* Font */,
 			);
 			path = Support;
@@ -367,8 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				A2882FA9203C5D6900D66F0D /* CityWeatherTableViewCell.swift */,
-				A2882FAD203C5F5000D66F0D /* CityMapViewRenderer.swift */,
-				A2882FBD203D834200D66F0D /* CityMapView.xib */,
 				A2882FB1203C5FA600D66F0D /* CityWeatherDetailsView.swift */,
 			);
 			path = Views;
@@ -510,6 +503,7 @@
 			files = (
 				A27E8CBC203C312E000DB52D /* Gotham-Bold.otf in Resources */,
 				A2882F9C203C463800D66F0D /* MockInvalidApiKey.json in Resources */,
+				A2882FD4203F21E300D66F0D /* LoadingWeatherIndicator.gif in Resources */,
 				A27E8CC1203C312E000DB52D /* Gotham-LightItalic.otf in Resources */,
 				A27E8917203C2BCF000DB52D /* LaunchScreen.storyboard in Resources */,
 				A27E8CCA203C312E000DB52D /* GothamRnd-Bold.otf in Resources */,
@@ -526,7 +520,6 @@
 				A27E8CC4203C312E000DB52D /* Gotham-Thin.otf in Resources */,
 				A27E8CBA203C312E000DB52D /* Gotham-Black.otf in Resources */,
 				A27E8CC7203C312E000DB52D /* Gotham-UltraItalic.otf in Resources */,
-				A2882FBE203D834200D66F0D /* CityMapView.xib in Resources */,
 				A27E8CCF203C312F000DB52D /* GothamRnd-LightIta.otf in Resources */,
 				A27E8CC5203C312E000DB52D /* Gotham-ThinItalic.otf in Resources */,
 				A27E8914203C2BCF000DB52D /* Assets.xcassets in Resources */,
@@ -547,7 +540,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2882FA1203C467600D66F0D /* MockCityNotFound.json in Resources */,
-				A2882FBF203D834200D66F0D /* CityMapView.xib in Resources */,
 				A2882F9D203C463800D66F0D /* MockInvalidApiKey.json in Resources */,
 				A2882F99203C437E00D66F0D /* MockSuccessData.json in Resources */,
 			);
@@ -558,7 +550,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2882FA2203C467600D66F0D /* MockCityNotFound.json in Resources */,
-				A2882FC0203D834200D66F0D /* CityMapView.xib in Resources */,
 				A2882F9E203C463800D66F0D /* MockInvalidApiKey.json in Resources */,
 				A2882F9A203C437E00D66F0D /* MockSuccessData.json in Resources */,
 			);
@@ -593,6 +584,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoodDay/Pods-GoodDay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -600,6 +592,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -741,7 +734,6 @@
 				A2882F7F203C353E00D66F0D /* ApiResponse.swift in Sources */,
 				A2882FB2203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */,
 				A27E890F203C2BCF000DB52D /* CityWeatherDetailsViewController.swift in Sources */,
-				A2882FAE203C5F5000D66F0D /* CityMapViewRenderer.swift in Sources */,
 				A2882F7C203C353E00D66F0D /* Sys.swift in Sources */,
 				A2882F82203C353E00D66F0D /* Wind.swift in Sources */,
 			);
@@ -755,7 +747,6 @@
 				A2882FB3203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */,
 				A2882F86203C353E00D66F0D /* Main.swift in Sources */,
 				A2882F80203C353E00D66F0D /* ApiResponse.swift in Sources */,
-				A2882FAF203C5F5000D66F0D /* CityMapViewRenderer.swift in Sources */,
 				A2882F83203C353E00D66F0D /* Wind.swift in Sources */,
 				A2882FA7203C5BDB00D66F0D /* WeatherDetailsViewModel.swift in Sources */,
 				A27E8922203C2BCF000DB52D /* GoodDayTests.swift in Sources */,
@@ -776,7 +767,6 @@
 				A2882FB4203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */,
 				A2882F87203C353E00D66F0D /* Main.swift in Sources */,
 				A2882F81203C353E00D66F0D /* ApiResponse.swift in Sources */,
-				A2882FB0203C5F5000D66F0D /* CityMapViewRenderer.swift in Sources */,
 				A2882F84203C353E00D66F0D /* Wind.swift in Sources */,
 				A2882FA8203C5BDB00D66F0D /* WeatherDetailsViewModel.swift in Sources */,
 				A27E892D203C2BCF000DB52D /* GoodDayUITests.swift in Sources */,

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - Kingfisher (4.6.2)
   - ObjectMapper (3.1.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
@@ -7,16 +8,18 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Kingfisher
   - ObjectMapper
   - RxCocoa
   - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 13301dff68057c9a240c47fc40f4c7b375668717
+PODFILE CHECKSUM: 5ab5ab91468e0aa3934cafd89c66c406fca36341
 
 COCOAPODS: 1.3.1

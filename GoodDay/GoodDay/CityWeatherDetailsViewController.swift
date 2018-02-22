@@ -12,22 +12,13 @@ class CityWeatherDetailsViewController: UIViewController {
 
     @IBOutlet var cityWeatherDetailsView: CityWeatherDetailsView!
     public var cityId: Int?
-    
-    func configureView() {
-        navigationItem.backBarButtonItem?.title = ""
-    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        configureView()
         guard let cityId = cityId else { return }
         cityWeatherDetailsView.cityId = cityId
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        navigationItem.backBarButtonItem?.title = ""
     }
 
     @IBAction func refreshButtonSelected(_ sender: Any) {
@@ -35,13 +26,5 @@ class CityWeatherDetailsViewController: UIViewController {
         cityWeatherDetailsView.cityId = cityId
     }
     
-    var detailItem: Event? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
-
-
 }
 

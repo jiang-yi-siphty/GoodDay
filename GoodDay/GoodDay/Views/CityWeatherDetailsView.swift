@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class CityWeatherDetailsView: UIView {
 
@@ -22,7 +23,7 @@ class CityWeatherDetailsView: UIView {
     @IBOutlet var pressureLabel: UILabel!
     @IBOutlet var windSpeedLabel: UILabel!
     @IBOutlet var weatherDescription: UILabel!
-    @IBOutlet var loadingActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet var iconImageView: UIImageView!
     
     var viewModel: WeatherViewModel?{
         didSet {
@@ -32,6 +33,7 @@ class CityWeatherDetailsView: UIView {
     
     public var cityId: Int? {
         didSet {
+            imageIndicatorStart()
             configViewModel()
         }
     }
@@ -58,23 +60,11 @@ class CityWeatherDetailsView: UIView {
     
     fileprivate let disposeBag = DisposeBag()
     
-    override init (frame : CGRect) {
-        super.init(frame : frame)
-        addAnimation()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        loadingActivityIndicator.startAnimating()
-        loadingActivityIndicator.isHidden = false
+        imageIndicatorStart()
         dateLabel.text = getDate()
         monthLabel.text = getMonth()
-        loadingActivityIndicator.activityIndicatorViewStyle = .whiteLarge
-        loadingActivityIndicator.color = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
     }
     
     func configViewModel() {
@@ -127,9 +117,13 @@ class CityWeatherDetailsView: UIView {
             print(error.localizedDescription)
         }, onCompleted: nil, onDisposed: nil)
         
-        viewModel?.isIndicatorHiding.asObservable()
-            .bind(to: self.loadingActivityIndicator.rx.isHidden)
-            .disposed(by: disposeBag)
+        viewModel?.weatherIconName.asObservable().subscribe(onNext: { iconName in
+            DispatchQueue.main.async {
+                self.updateIconImage(iconName)
+            }
+        }, onError: { error in
+            print(error.localizedDescription)
+        }, onCompleted: nil, onDisposed: nil)
     }
     
     func getDate() -> String {
@@ -160,9 +154,9 @@ class CityWeatherDetailsView: UIView {
         return countryName
     }
     
-    func addAnimation() {
-        
-    }
+//    func addAnimation() {
+//        
+//    }
     
     
    
@@ -186,6 +180,23 @@ class CityWeatherDetailsView: UIView {
     
     fileprivate func updateWindUi(_ speed: Float) {
         self.windSpeedLabel.text = String.init(format: "Wind: %.1fkm/h", speed)
+    }
+    
+    fileprivate func updateIconImage(_ iconName: String) {
+        guard iconName != "" else { return }
+//        if let url = URL(string: "http://openweathermap.org/img/w/\(iconName).png") {
+            if let url = URL(string: "https://goo.gl/images/JdPYj1") {
+            iconImageView.contentMode = .scaleAspectFill
+            iconImageView.kf.setImage(with: url)
+        }
+    }
+    
+    fileprivate func imageIndicatorStart() {
+        iconImageView.contentMode = .scaleAspectFill
+        let p = Bundle.main.path(forResource: "LoadingWeatherIndicator", ofType: "gif")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: p))
+        iconImageView.kf.indicatorType = .image(imageData: data)
+        iconImageView.kf.indicator?.startAnimatingView()
     }
 }
 

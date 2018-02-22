@@ -10,11 +10,9 @@
 import Foundation 
 import ObjectMapper
 
-
 class Cloud : NSObject, NSCoding, Mappable{
 
 	var all : Int?
-
 
 	class func newInstance(map: Map) -> Mappable?{
 		return Cloud()

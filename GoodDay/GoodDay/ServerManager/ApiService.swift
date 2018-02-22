@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import CoreLocation
 
-
 enum RequestStatus {
     case success(ApiResponse)
     case fail(RequestError)
@@ -40,7 +39,6 @@ enum  ApiConfig {
     fileprivate static let owmBaseUrl = "https://api.openweathermap.org/"
     fileprivate static let owmApiVersion = "2.5"
     fileprivate static let owmApiKey = "efa9fc0f74ac42e64b50e4510faa713b"
-    
     
     var urlPath: String {
         switch self {

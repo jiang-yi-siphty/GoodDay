@@ -18,6 +18,7 @@ class WeatherViewModel {
     var city = Variable<String>("...")
     var country = Variable<String>("...")
     var weatherDescription = Variable<String>("...")
+    var weatherIconName = Variable<String>("")
     var system = Variable<Sys?>(nil)
     var wind = Variable<Wind?>(nil)
     var cityCode = Variable<Int>(4163971)
@@ -35,6 +36,8 @@ class WeatherViewModel {
         bindSystemCountry()
         bindWeatherDescription()
         bindCityName()
+        bindWind()
+        bindWeatherIcon()
         self.cityCode.value = cityCode
         fetchWeather(apiService)
     }
@@ -95,6 +98,14 @@ class WeatherViewModel {
         apiResponse.asObservable().subscribe(onNext: { apiResponse in
             if let wind = apiResponse?.wind {
                 self.wind.value = wind
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    fileprivate func bindWeatherIcon() {
+        apiResponse.asObservable().subscribe(onNext: { apiResponse in
+            if let iconName = apiResponse?.weather?[0].icon {
+                self.weatherIconName.value = iconName
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
