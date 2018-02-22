@@ -42,12 +42,22 @@ class CityWeatherTableViewCell: UITableViewCell {
             .disposed(by: disposeBag)
         
         viewModel?.temperature.asObservable()
-            .bind(to: temperatureLabel.rx.text)
+            .subscribe(onNext: { temp in
+                DispatchQueue.main.async {
+                    self.updateTemperatureLabel(temp)
+                }
+            }, onError: { error in
+                print(error.localizedDescription)
+            }, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
         
         viewModel?.isIndicatorHiding.asObservable()
             .bind(to: loadingActivityIndicator.rx.isHidden)
             .disposed(by: disposeBag)
+    }
+    
+    private func updateTemperatureLabel(_ temp: String) {
+        temperatureLabel.text = temp + " ℃"
     }
 
 }
