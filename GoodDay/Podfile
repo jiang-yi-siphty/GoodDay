@@ -13,12 +13,20 @@ target 'GoodDay' do
     
   target 'GoodDayTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'Kingfisher'
   end
 
   target 'GoodDayUITests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'Kingfisher'
   end
 
 end

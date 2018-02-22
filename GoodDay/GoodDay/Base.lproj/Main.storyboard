@@ -59,6 +59,9 @@
                                         <constraint firstItem="rez-9N-qC6" firstAttribute="top" secondItem="zGS-2v-3bJ" secondAttribute="topMargin" id="enD-RC-FYv"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="cityNameLabel" destination="7Ax-bo-Uz4" id="cwh-tH-AFK"/>
                                     <outlet property="loadingActivityIndicator" destination="rez-9N-qC6" id="RpP-Ba-lPz"/>

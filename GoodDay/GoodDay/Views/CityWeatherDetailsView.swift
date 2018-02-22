@@ -81,6 +81,7 @@ class CityWeatherDetailsView: UIView {
                 }
             }, onError: { error in
                 print(error.localizedDescription)
+                self.showErrorAlert(error)
             }, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
         
@@ -92,6 +93,7 @@ class CityWeatherDetailsView: UIView {
                 }
             }, onError: { error in
                 print(error.localizedDescription)
+                self.showErrorAlert(error)
             }, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
         
@@ -104,6 +106,7 @@ class CityWeatherDetailsView: UIView {
                 self.weatherMainDetails = weatherMain
             }, onError: { error in
                 print(error.localizedDescription)
+                self.showErrorAlert(error)
             }, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
         
@@ -115,6 +118,7 @@ class CityWeatherDetailsView: UIView {
             }
         }, onError: { error in
             print(error.localizedDescription)
+            self.showErrorAlert(error)
         }, onCompleted: nil, onDisposed: nil)
         
         viewModel?.weatherIconName.asObservable().subscribe(onNext: { iconName in
@@ -123,6 +127,7 @@ class CityWeatherDetailsView: UIView {
             }
         }, onError: { error in
             print(error.localizedDescription)
+            self.showErrorAlert(error)
         }, onCompleted: nil, onDisposed: nil)
     }
     
@@ -192,6 +197,15 @@ class CityWeatherDetailsView: UIView {
         let data = try! Data(contentsOf: URL(fileURLWithPath: p))
         iconImageView.kf.indicatorType = .image(imageData: data)
         iconImageView.kf.indicator?.startAnimatingView()
+    }
+    
+    fileprivate func showErrorAlert(_ error: Error){
+//        DispatchQueue.main.async {
+//            let alert = UIAlertController(title: "🚧🚨" + error.localizedDescription + "👷🏼🚧", message: nil, preferredStyle: .alert)
+//            let action = UIAlertAction(title: "Continue", style: .default, handler: nil)
+//            alert.addAction(action)
+//            self.present(alert, animated: true, completion: nil)
+//        }
     }
 }
 

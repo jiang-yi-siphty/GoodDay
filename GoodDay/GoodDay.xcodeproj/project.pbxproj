@@ -8,6 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		0C4DA8A43AE66E357DDFBC6B /* Pods_GoodDayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430A0FEE5951C539146C369 /* Pods_GoodDayTests.framework */; };
+		3D293BFB203F8D0900A6FCD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27E8913203C2BCF000DB52D /* Assets.xcassets */; };
+		3D293BFC203F8D7C00A6FCD3 /* LoadingWeatherIndicator.gif in Resources */ = {isa = PBXBuildFile; fileRef = A2882FD3203F21E300D66F0D /* LoadingWeatherIndicator.gif */; };
+		3D293BFD203F8D8C00A6FCD3 /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA2203C312E000DB52D /* Gotham-Black.otf */; };
+		3D293BFE203F8D8C00A6FCD3 /* Gotham-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA3203C312E000DB52D /* Gotham-BlackItalic.otf */; };
+		3D293BFF203F8D8C00A6FCD3 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA4203C312E000DB52D /* Gotham-Bold.otf */; };
+		3D293C00203F8D8C00A6FCD3 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA5203C312E000DB52D /* Gotham-BoldItalic.otf */; };
+		3D293C01203F8D8C00A6FCD3 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA6203C312E000DB52D /* Gotham-Book.otf */; };
+		3D293C02203F8D8C00A6FCD3 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA7203C312E000DB52D /* Gotham-BookItalic.otf */; };
+		3D293C03203F8D8C00A6FCD3 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA8203C312E000DB52D /* Gotham-Light.otf */; };
+		3D293C04203F8D8C00A6FCD3 /* Gotham-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CA9203C312E000DB52D /* Gotham-LightItalic.otf */; };
+		3D293C05203F8D8C00A6FCD3 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CAA203C312E000DB52D /* Gotham-Medium.otf */; };
+		3D293C06203F8D8C00A6FCD3 /* Gotham-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CAB203C312E000DB52D /* Gotham-MediumItalic.otf */; };
+		3D293C07203F8D8C00A6FCD3 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CAC203C312E000DB52D /* Gotham-Thin.otf */; };
+		3D293C08203F8D8C00A6FCD3 /* Gotham-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CAD203C312E000DB52D /* Gotham-ThinItalic.otf */; };
+		3D293C09203F8D8C00A6FCD3 /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CAE203C312E000DB52D /* Gotham-Ultra.otf */; };
+		3D293C0A203F8D8C00A6FCD3 /* Gotham-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CAF203C312E000DB52D /* Gotham-UltraItalic.otf */; };
+		3D293C0B203F8D8C00A6FCD3 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB0203C312E000DB52D /* Gotham-XLight.otf */; };
+		3D293C0C203F8D8C00A6FCD3 /* Gotham-XLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB1203C312E000DB52D /* Gotham-XLightItalic.otf */; };
+		3D293C0D203F8D8C00A6FCD3 /* GothamRnd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB2203C312E000DB52D /* GothamRnd-Bold.otf */; };
+		3D293C0E203F8D8C00A6FCD3 /* GothamRnd-BoldIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB3203C312E000DB52D /* GothamRnd-BoldIta.otf */; };
+		3D293C0F203F8D8C00A6FCD3 /* GothamRnd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB4203C312E000DB52D /* GothamRnd-Book.otf */; };
+		3D293C10203F8D8C00A6FCD3 /* GothamRnd-BookIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB5203C312E000DB52D /* GothamRnd-BookIta.otf */; };
+		3D293C11203F8D8C00A6FCD3 /* GothamRnd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB6203C312E000DB52D /* GothamRnd-Light.otf */; };
+		3D293C12203F8D8C00A6FCD3 /* GothamRnd-LightIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB7203C312E000DB52D /* GothamRnd-LightIta.otf */; };
+		3D293C13203F8D8C00A6FCD3 /* GothamRnd-MedIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB8203C312E000DB52D /* GothamRnd-MedIta.otf */; };
+		3D293C14203F8D8C00A6FCD3 /* GothamRnd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB9203C312E000DB52D /* GothamRnd-Medium.otf */; };
 		6BA4C056E6DCA19E893CEF2C /* Pods_GoodDayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C2C33EEFB81BBDD2F8CB01 /* Pods_GoodDayUITests.framework */; };
 		A27E8908203C2BCF000DB52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27E8907203C2BCF000DB52D /* AppDelegate.swift */; };
 		A27E890B203C2BCF000DB52D /* GoodDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A27E8909203C2BCF000DB52D /* GoodDay.xcdatamodeld */; };
@@ -549,8 +575,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D293C04203F8D8C00A6FCD3 /* Gotham-LightItalic.otf in Resources */,
+				3D293C06203F8D8C00A6FCD3 /* Gotham-MediumItalic.otf in Resources */,
+				3D293BFE203F8D8C00A6FCD3 /* Gotham-BlackItalic.otf in Resources */,
+				3D293C14203F8D8C00A6FCD3 /* GothamRnd-Medium.otf in Resources */,
+				3D293BFC203F8D7C00A6FCD3 /* LoadingWeatherIndicator.gif in Resources */,
+				3D293C13203F8D8C00A6FCD3 /* GothamRnd-MedIta.otf in Resources */,
+				3D293C01203F8D8C00A6FCD3 /* Gotham-Book.otf in Resources */,
+				3D293C0A203F8D8C00A6FCD3 /* Gotham-UltraItalic.otf in Resources */,
+				3D293BFD203F8D8C00A6FCD3 /* Gotham-Black.otf in Resources */,
+				3D293C08203F8D8C00A6FCD3 /* Gotham-ThinItalic.otf in Resources */,
+				3D293C07203F8D8C00A6FCD3 /* Gotham-Thin.otf in Resources */,
+				3D293C0B203F8D8C00A6FCD3 /* Gotham-XLight.otf in Resources */,
+				3D293C0E203F8D8C00A6FCD3 /* GothamRnd-BoldIta.otf in Resources */,
 				A2882FA2203C467600D66F0D /* MockCityNotFound.json in Resources */,
+				3D293BFF203F8D8C00A6FCD3 /* Gotham-Bold.otf in Resources */,
 				A2882F9E203C463800D66F0D /* MockInvalidApiKey.json in Resources */,
+				3D293C10203F8D8C00A6FCD3 /* GothamRnd-BookIta.otf in Resources */,
+				3D293C0D203F8D8C00A6FCD3 /* GothamRnd-Bold.otf in Resources */,
+				3D293C12203F8D8C00A6FCD3 /* GothamRnd-LightIta.otf in Resources */,
+				3D293BFB203F8D0900A6FCD3 /* Assets.xcassets in Resources */,
+				3D293C0C203F8D8C00A6FCD3 /* Gotham-XLightItalic.otf in Resources */,
+				3D293C03203F8D8C00A6FCD3 /* Gotham-Light.otf in Resources */,
+				3D293C05203F8D8C00A6FCD3 /* Gotham-Medium.otf in Resources */,
+				3D293C09203F8D8C00A6FCD3 /* Gotham-Ultra.otf in Resources */,
+				3D293C11203F8D8C00A6FCD3 /* GothamRnd-Light.otf in Resources */,
+				3D293C02203F8D8C00A6FCD3 /* Gotham-BookItalic.otf in Resources */,
+				3D293C0F203F8D8C00A6FCD3 /* GothamRnd-Book.otf in Resources */,
+				3D293C00203F8D8C00A6FCD3 /* Gotham-BoldItalic.otf in Resources */,
 				A2882F9A203C437E00D66F0D /* MockSuccessData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,14 +660,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoodDayUITests/Pods-GoodDayUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodDayUITests/Pods-GoodDayUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		6EF0F44EC8453527D92B29E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -704,9 +766,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoodDayTests/Pods-GoodDayTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
