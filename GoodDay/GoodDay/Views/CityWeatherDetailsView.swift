@@ -178,7 +178,7 @@ class CityWeatherDetailsView: UIView {
     
     fileprivate func updateIconImage(_ iconName: String) {
         guard iconName != "" else { return }
-        if let url = URL(string: "http://openweathermap.org/img/w/\(iconName).png") {
+        if let url = URL(string: "https://openweathermap.org/img/w/\(iconName).png") {
             iconImageView.contentMode = .scaleAspectFill
             iconImageView.kf.setImage(with: url)
         }
