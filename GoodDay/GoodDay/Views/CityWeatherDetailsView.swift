@@ -161,15 +161,17 @@ class CityWeatherDetailsView: UIView {
     }
     
     fileprivate func updateMinMaxTemperatureLabel() {
-        minMaxTemperatureLabel.text = "Min: \(tempMin)º  Max: \(tempMax)º"
+        minMaxTemperatureLabel.text = "Min: \(tempMin)℃  Max: \(tempMax)℃"
     }
     
     fileprivate func updateWeatherMainDetailsUIs() {
-        self.temperatureLabel.text = String.init(format: "%.1f", weatherMainDetails?.temp ?? 0.0)
-        self.tempMax = weatherMainDetails?.tempMax ?? 0
-        self.tempMin = weatherMainDetails?.tempMin ?? 0
-        self.pressureLabel.text = "Pressure: \(weatherMainDetails?.pressure ?? 0)mmHg"
-        self.humidityLabel.text = "Humidity: \(weatherMainDetails?.humidity ?? 0)%"
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = String.init(format: "%.1f", self.weatherMainDetails?.temp ?? 0.0)
+            self.tempMax = self.weatherMainDetails?.tempMax ?? 0
+            self.tempMin = self.weatherMainDetails?.tempMin ?? 0
+            self.pressureLabel.text = "Pressure: \(self.weatherMainDetails?.pressure ?? 0)mmHg"
+            self.humidityLabel.text = "Humidity: \(self.weatherMainDetails?.humidity ?? 0)%"
+        }
     }
     
     fileprivate func updateWindUi(_ speed: Float) {
