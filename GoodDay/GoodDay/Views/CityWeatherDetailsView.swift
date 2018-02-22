@@ -153,12 +153,6 @@ class CityWeatherDetailsView: UIView {
         guard let countryName = Locale.current.localizedString(forRegionCode: countryCode) else { return "Unknown Country"}
         return countryName
     }
-    
-//    func addAnimation() {
-//        
-//    }
-    
-    
    
     // MARK: update UI
     fileprivate func updateCityCountryLabel() {
@@ -184,8 +178,7 @@ class CityWeatherDetailsView: UIView {
     
     fileprivate func updateIconImage(_ iconName: String) {
         guard iconName != "" else { return }
-//        if let url = URL(string: "http://openweathermap.org/img/w/\(iconName).png") {
-            if let url = URL(string: "https://goo.gl/images/JdPYj1") {
+        if let url = URL(string: "http://openweathermap.org/img/w/\(iconName).png") {
             iconImageView.contentMode = .scaleAspectFill
             iconImageView.kf.setImage(with: url)
         }
