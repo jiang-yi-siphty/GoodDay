@@ -12,7 +12,7 @@ I am using [Alamofire](https://cocoapods.org/pods/Alamofire) pod for access API 
 The [ObjectMapper](https://cocoapods.org/pods/ObjectMapper) helps me to map decoded JSON object.  
 
 ## Architeture
-MVVM + #RxSwift# for Architeture
+RxSwift + MVVM
 
 ## Unit Test
 Use XCTest framework for test ViewModel by feed mock data.   
