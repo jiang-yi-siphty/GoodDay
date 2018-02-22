@@ -15,16 +15,16 @@ class WeatherViewModel {
     let disposeBag = DisposeBag()
     var apiResponse = Variable<ApiResponse?>(nil)
     var main = Variable<Main?>(nil)
-    var city = Variable<String>("Not found")
-    var country = Variable<String>("AU")
-    var description = Variable<String>("NUN")
+    var city = Variable<String>("...")
+    var country = Variable<String>("...")
+    var weatherDescription = Variable<String>("...")
     var system = Variable<Sys?>(nil)
     var wind = Variable<Wind?>(nil)
     var cityCode = Variable<Int>(4163971)
     var humidity = Variable<String>("0")
     var temperature = Variable<String>("0")
-    var tempMin = Variable<String>("0")
-    var tempMax = Variable<String>("0")
+    var tempMin = Variable<Int>(0)
+    var tempMax = Variable<Int>(0)
     var pressure = Variable<String>("0")
     var isIndicatorHiding = Variable<Bool>(false)
     var isAlertShowing = Variable<Bool>(false)
@@ -50,25 +50,19 @@ class WeatherViewModel {
                 print(error.errorDescription ?? "Faild to load weather data")
                 self.isAlertShowing.value = true
             }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: { error in
+            print(error.localizedDescription)
+            self.apiResponse.value = nil
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     fileprivate func bindMainWeatherDetails() {
         apiResponse.asObservable().subscribe(onNext: { apiResponse in
-            if let humidity = apiResponse?.main?.humidity {
-                self.humidity.value = "\(humidity)%"
+            if let weatherMain =  apiResponse?.main {
+                self.main.value = weatherMain
             }
             if let temperature = apiResponse?.main?.temp {
-                self.temperature.value = "\(temperature)℃"
-            }
-            if let tempMin = apiResponse?.main?.tempMin {
-                self.tempMin.value = "\(tempMin)℃"
-            }
-            if let tempMax = apiResponse?.main?.tempMax {
-                self.tempMax.value = "\(tempMax)℃"
-            }
-            if let pressure = apiResponse?.main?.pressure {
-                self.pressure.value = "\(pressure)mmHg"
+                self.temperature.value = "\(temperature)"
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
@@ -91,8 +85,16 @@ class WeatherViewModel {
     
     fileprivate func bindWeatherDescription() {
         apiResponse.asObservable().subscribe(onNext: { apiResponse in
-            if let description = apiResponse?.weather?.description {
-                self.description.value = description
+            if let descriptionField = apiResponse?.weather?[0].descriptionField {
+                self.weatherDescription.value = descriptionField
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    fileprivate func bindWind() {
+        apiResponse.asObservable().subscribe(onNext: { apiResponse in
+            if let wind = apiResponse?.wind {
+                self.wind.value = wind
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }

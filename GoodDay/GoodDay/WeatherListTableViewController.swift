@@ -22,6 +22,10 @@ class WeatherListTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func refreshButtonSelected(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -52,7 +56,7 @@ class WeatherListTableViewController: UITableViewController {
             if let destinationVC = segue.destination as? CityWeatherDetailsViewController {
                 guard let selectedCellIndexPath = selectedCellIndexPath else { return }
                 guard let cell = tableView.cellForRow(at: selectedCellIndexPath) as? CityWeatherTableViewCell else { return }
-                destinationVC.navigationBarTitleString = cell.cityNameLabel.text
+                destinationVC.title = cell.cityNameLabel.text
                 destinationVC.cityId = cell.cityId
             }
         }

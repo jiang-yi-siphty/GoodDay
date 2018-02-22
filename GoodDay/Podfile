@@ -9,7 +9,8 @@ target 'GoodDay' do
     pod 'RxCocoa'
     pod 'Alamofire'
 	pod 'ObjectMapper'
-   	
+   	pod 'Kingfisher'
+    
   target 'GoodDayTests' do
     inherit! :search_paths
     # Pods for testing

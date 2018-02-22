@@ -11,23 +11,9 @@ import UIKit
 class CityWeatherDetailsViewController: UIViewController {
 
     @IBOutlet var cityWeatherDetailsView: CityWeatherDetailsView!
-    
-    public var navigationBarTitleString: String? 
-    public var cityId: Int? {
-        didSet {
-            guard let cityId = cityId else { return }
-            cityWeatherDetailsView.cityId = cityId
-        }
-    }
+    public var cityId: Int?
     
     func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.timestamp!.description
-            }
-        }
-        title = navigationBarTitleString
         navigationItem.backBarButtonItem?.title = ""
     }
 
@@ -35,13 +21,20 @@ class CityWeatherDetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
+        guard let cityId = cityId else { return }
+        cityWeatherDetailsView.cityId = cityId
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func refreshButtonSelected(_ sender: Any) {
+        guard let cityId = cityId else { return }
+        cityWeatherDetailsView.cityId = cityId
+    }
+    
     var detailItem: Event? {
         didSet {
             // Update the view.
