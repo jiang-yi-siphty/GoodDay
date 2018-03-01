@@ -17,22 +17,38 @@
             endingLineNumber = "189"
             landmarkName = "updateIconImage(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoodDay/ServerManager/ApiClient.swift"
-            timestampString = "541559470.438412"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "networkRequest(_:completionHandler:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoodDay.CityWeatherDetailsView.(updateIconImage in _BE89E1A0CCDCBB79DA358015105A25E9)(Swift.String) -&gt; ()"
+                  moduleName = "GoodDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yij/DeleteBeforeLeave/GoodDay/GoodDay/GoodDay/Views/CityWeatherDetailsView.swift"
+                  timestampString = "541565488.057258"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "1512">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoodDayTests.CityWeatherDetailsView.(updateIconImage in _A2BE7D9E13A898D5019AE6AA4B6F28C1)(Swift.String) -&gt; ()"
+                  moduleName = "GoodDayTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yij/DeleteBeforeLeave/GoodDay/GoodDay/GoodDay/Views/CityWeatherDetailsView.swift"
+                  timestampString = "541565489.026132"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "1512">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

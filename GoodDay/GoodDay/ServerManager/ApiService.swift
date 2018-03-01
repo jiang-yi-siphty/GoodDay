@@ -51,6 +51,34 @@ enum  ApiConfig {
         }
     }
     
+    var path: String {
+        switch self {
+        case .weather( _):
+            return "/s/2iodh4vg0eortkl/facts.json"
+        }
+    }
+    
+    var method: String {
+        switch self {
+        case .weather(_):
+            return "GET"
+        }
+    }
+    
+    var header: [String: Any]?{
+        switch self {
+        case .weather(_):
+            return nil
+        }
+    }
+    
+    var parameters: [String: Any]? {
+        switch self {
+        case .weather(_):
+            return nil
+        }
+    }
+    
     func getFullUrl() -> URL {
         var baseUrl: String!
         switch self {
@@ -68,5 +96,5 @@ enum  ApiConfig {
 
 protocol ApiService {
     func fetchOWMWeather(_ config: ApiConfig) -> Observable<RequestStatus>
-    func networkRequest(_ url: URL, completionHandler: @escaping ((_ jsonResponse: [String: Any]?, _ error: RequestError?) -> Void))
+    func networkRequest(_ config: ApiConfig, completionHandler: @escaping ((_ jsonResponse: [String: Any]?, _ error: RequestError?) -> Void))
 }

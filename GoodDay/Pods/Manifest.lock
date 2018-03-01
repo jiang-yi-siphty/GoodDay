@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
   - Alamofire (4.6.0)
   - Kingfisher (4.6.2)
   - ObjectMapper (3.1.0)
@@ -7,6 +22,7 @@ PODS:
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - AFNetworking
   - Alamofire
   - Kingfisher
   - ObjectMapper
@@ -14,12 +30,13 @@ DEPENDENCIES:
   - RxSwift
 
 SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 91e2e2b42c4ab270a445d19890ceac2cf74cc524
+PODFILE CHECKSUM: eb4a9ad665e1c4e5fa67a04b892ce8e4d36380f0
 
 COCOAPODS: 1.4.0

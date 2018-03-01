@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 def shared_pods_for_target
     pod 'RxSwift'
@@ -7,25 +7,20 @@ def shared_pods_for_target
     pod 'Alamofire'
     pod 'ObjectMapper'
     pod 'Kingfisher'
+    pod 'AFNetworking'
 end
 
 target 'GoodDay' do
     use_frameworks!
-    
-    pod 'RxSwift'
-    pod 'RxCocoa'
-    pod 'Alamofire'
-    pod 'ObjectMapper'
-    pod 'Kingfisher'
+    shared_pods_for_target
     
     target 'GoodDayTests' do
         inherit! :search_paths
-        shared_pods_for_target
+        
     end
     
     target 'GoodDayUITests' do
         inherit! :search_paths
-        shared_pods_for_target
     end
     
 end
