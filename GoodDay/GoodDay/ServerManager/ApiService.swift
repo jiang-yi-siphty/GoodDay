@@ -69,5 +69,4 @@ enum  ApiConfig {
 protocol ApiService {
     func fetchOWMWeather(_ config: ApiConfig) -> Observable<RequestStatus>
     func networkRequest(_ url: URL, completionHandler: @escaping ((_ jsonResponse: [String: Any]?, _ error: RequestError?) -> Void))
-    func tcpConnect()
 }
