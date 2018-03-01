@@ -43,7 +43,8 @@ class WeatherViewModel {
     }
     
     fileprivate func fetchWeather(_ apiService: ApiService) {
-        apiService.fetchOWMWeather(ApiConfig.weather(cityCode.value)).subscribe(onNext: { status in
+        apiService.fetchOWMWeather(ApiConfig.weather(cityCode.value))
+            .subscribe(onNext: { status in
             self.isIndicatorHiding.value = true
             switch status {
             case .success(let apiResponse):
