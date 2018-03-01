@@ -71,7 +71,7 @@ extension ApiClient {
         let url = config.getFullUrl()
         let session = URLSession.shared
         let task = session.dataTask(with: url) { (data, response, error) in
-            self.responseHandler(data, error: error, completionHandler: completionHandler)
+            self.responseHandler(data, error, completionHandler)
         }
         task.resume()
     }
@@ -84,7 +84,7 @@ extension ApiClient {
         request.httpMethod = method
         let queue: OperationQueue = OperationQueue()
         NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: queue) { (response, data, error) in
-            self.responseHandler(data, error: error, completionHandler: completionHandler)
+            self.responseHandler(data, error, completionHandler)
         }
     }
     
@@ -100,12 +100,12 @@ extension ApiClient {
         case "GET":
             DispatchQueue.global().async {
                 sessionManager.get(url.absoluteString,
-                                   parameters: config.parameters,
+                                   parameters: nil,
                                    progress: nil,
                                    success: { (task, response) in
-                    let jsonString = String(data: response as! Data, encoding: String.Encoding.ascii)
-                    let data = jsonString?.data(using: .utf8)
-                    self.responseHandler(data, nil, completionHandler)
+                                    let jsonString = String(data: response as! Data, encoding: String.Encoding.ascii)
+                                    let data = jsonString?.data(using: .utf8)
+                                    self.responseHandler(data, nil, completionHandler)
                 },
                                    failure: { (task: URLSessionDataTask?, error) in
                     self.responseHandler(nil, error, completionHandler)
@@ -128,7 +128,7 @@ extension ApiClient {
         }
     }
     
-    fileprivate func responseHandler(_ data: Data?, error: Error?, completionHandler: @escaping ((_ jsonResponse: [String: Any]?, _ error: RequestError?) -> Void)){
+    fileprivate func responseHandler(_ data: Data?, _ error: Error?, _ completionHandler: @escaping ((_ jsonResponse: [String: Any]?, _ error: RequestError?) -> Void)){
         if let error = error {
             completionHandler(nil, RequestError(error.localizedDescription))
         } else if let data = data {
