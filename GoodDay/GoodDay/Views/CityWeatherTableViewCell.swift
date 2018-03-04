@@ -3,7 +3,7 @@
 //  GoodDay
 //
 //  Created by Yi JIANG on 21/2/18.
-//  Copyright © 2018 Thred. All rights reserved.
+//  Copyright © 2018 Siphty. All rights reserved.
 //
 
 import UIKit
@@ -24,12 +24,17 @@ class CityWeatherTableViewCell: UITableViewCell {
         }
     }
     
-    fileprivate let disposeBag = DisposeBag()
+    fileprivate var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         loadingActivityIndicator.startAnimating()
         loadingActivityIndicator.isHidden = false
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
     }
     
     func configViewModel() {

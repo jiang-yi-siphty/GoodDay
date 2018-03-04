@@ -3,7 +3,7 @@
 //  GoodDay
 //
 //  Created by Yi JIANG on 22/2/18.
-//  Copyright © 2018 Thred. All rights reserved.
+//  Copyright © 2018 Siphty. All rights reserved.
 //
 
 import UIKit
@@ -50,7 +50,7 @@ class WeatherListTableViewController: UITableViewController {
         selectedCellIndexPath = indexPath
         performSegue(withIdentifier: "SegueToCityWeatherDetailsView", sender: self)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueToCityWeatherDetailsView" {
             if let destinationVC = segue.destination as? CityWeatherDetailsViewController {

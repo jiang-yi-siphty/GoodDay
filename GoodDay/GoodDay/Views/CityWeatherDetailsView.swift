@@ -3,7 +3,7 @@
 //  GoodDay
 //
 //  Created by Yi JIANG on 21/2/18.
-//  Copyright © 2018 Thred. All rights reserved.
+//  Copyright © 2018 Siphty. All rights reserved.
 //
 
 import UIKit
