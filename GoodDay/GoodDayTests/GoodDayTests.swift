@@ -107,7 +107,7 @@ class MockApiClient: ApiClient {
     }
     
     //Use mock response data based on the
-    override func networkRequest(_ url: URL, completionHandler: @escaping ((_ jsonResponse: [String: Any]?, _ error: RequestError?) -> Void)) {
+    override func networkRequest(_ config: ApiConfig, completionHandler: @escaping ((_ jsonResponse: [String: Any]?, _ error: RequestError?) -> Void)) {
         guard let json = JsonFileLoader.loadJson(fileName: jsonFileName.rawValue) as? [String: Any] else {
             completionHandler(nil, RequestError("Parse Weather information failed."))
             return
