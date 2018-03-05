@@ -20,6 +20,7 @@ class WeatherListTableViewController: UITableViewController {
             bindViewModel()
         }
     }
+    @IBOutlet weak var refreshBarbuttonItem: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -29,17 +30,6 @@ class WeatherListTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func refreshButtonSelected(_ sender: Any) {
-        tableView.reloadData()
-    }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "CityWeathTableViewCell", for: indexPath) as! CityWeatherTableViewCell
-//        guard let cityIds = cityIds else { return cell }
-//        cell.cityId = cityIds[indexPath.row]
-//        return cell
-//    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCellIndexPath = indexPath
@@ -64,5 +54,11 @@ class WeatherListTableViewController: UITableViewController {
             cell.cityId = cityId
         }
         .disposed(by: disposeBag)
+        
+        refreshBarbuttonItem.rx.tap.asObservable().subscribe(onNext: { () in
+            self.citiesViewModel = CitiesViewModel()
+        }, onError: { error in
+            print("error: \(error.localizedDescription)")
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }

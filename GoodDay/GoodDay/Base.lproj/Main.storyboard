@@ -82,6 +82,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="refreshBarbuttonItem" destination="Qev-ub-wn8" id="EJf-PG-f6X"/>
                         <outlet property="tableView" destination="2w7-fI-z9j" id="28U-nR-aSm"/>
                         <segue destination="ezo-wl-0Cl" kind="show" identifier="SegueToCityWeatherDetailsView" id="cwC-zm-8CG"/>
                     </connections>
