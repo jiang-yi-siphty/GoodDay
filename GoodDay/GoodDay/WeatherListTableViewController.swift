@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class WeatherListTableViewController: UITableViewController {
     
-    var cityIds = [4163971, 2147714, 2174003]
+    fileprivate let disposeBag = DisposeBag()
+    var cityIds: [Int]?
     var selectedCellIndexPath: IndexPath?
-    
+    var citiesViewModel: CitiesViewModel? {
+        didSet {
+            bindViewModel()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
+        citiesViewModel = CitiesViewModel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,25 +34,12 @@ class WeatherListTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return cityIds.count
-        default:
-            return 0
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityWeathTableViewCell", for: indexPath) as! CityWeatherTableViewCell
-        cell.cityId = cityIds[indexPath.row]
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CityWeathTableViewCell", for: indexPath) as! CityWeatherTableViewCell
+//        guard let cityIds = cityIds else { return cell }
+//        cell.cityId = cityIds[indexPath.row]
+//        return cell
+//    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCellIndexPath = indexPath
@@ -60,5 +55,14 @@ class WeatherListTableViewController: UITableViewController {
                 destinationVC.cityId = cell.cityId
             }
         }
+    }
+    
+    // MARK: ViewModel Binding
+    fileprivate func bindViewModel() {
+        tableView.dataSource = nil
+        citiesViewModel?.cityIds.asObservable().bind(to: tableView.rx.items(cellIdentifier: "CityWeathTableViewCell", cellType: CityWeatherTableViewCell.self)) { (_ , cityId, cell) in
+            cell.cityId = cityId
+        }
+        .disposed(by: disposeBag)
     }
 }

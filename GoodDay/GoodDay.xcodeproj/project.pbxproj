@@ -34,6 +34,9 @@
 		3D293C12203F8D8C00A6FCD3 /* GothamRnd-LightIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB7203C312E000DB52D /* GothamRnd-LightIta.otf */; };
 		3D293C13203F8D8C00A6FCD3 /* GothamRnd-MedIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB8203C312E000DB52D /* GothamRnd-MedIta.otf */; };
 		3D293C14203F8D8C00A6FCD3 /* GothamRnd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A27E8CB9203C312E000DB52D /* GothamRnd-Medium.otf */; };
+		3DDDF45B204CE8A100706E57 /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDF45A204CE8A100706E57 /* CitiesViewModel.swift */; };
+		3DDDF45C204CE8A100706E57 /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDF45A204CE8A100706E57 /* CitiesViewModel.swift */; };
+		3DDDF45D204CE8A100706E57 /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDF45A204CE8A100706E57 /* CitiesViewModel.swift */; };
 		6BA4C056E6DCA19E893CEF2C /* Pods_GoodDayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C2C33EEFB81BBDD2F8CB01 /* Pods_GoodDayUITests.framework */; };
 		A27E8908203C2BCF000DB52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27E8907203C2BCF000DB52D /* AppDelegate.swift */; };
 		A27E890B203C2BCF000DB52D /* GoodDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A27E8909203C2BCF000DB52D /* GoodDay.xcdatamodeld */; };
@@ -138,6 +141,7 @@
 		10D5DB53A4C00E012F5F2C16 /* Pods-GoodDayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodDayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodDayTests/Pods-GoodDayTests.release.xcconfig"; sourceTree = "<group>"; };
 		2430A0FEE5951C539146C369 /* Pods_GoodDayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodDayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244B8156D62B7E092E97E54B /* Pods-GoodDayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodDayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodDayTests/Pods-GoodDayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3DDDF45A204CE8A100706E57 /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
 		49067AEEB337E657089B6AB5 /* Pods-GoodDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodDay/Pods-GoodDay.debug.xcconfig"; sourceTree = "<group>"; };
 		5D48C77E6B64B0248F980705 /* Pods-GoodDayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodDayUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodDayUITests/Pods-GoodDayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		73B57918D1D5B21F29D4A6EF /* Pods-GoodDay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodDay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodDay/Pods-GoodDay.release.xcconfig"; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				A2882FA5203C5BDB00D66F0D /* WeatherDetailsViewModel.swift */,
+				3DDDF45A204CE8A100706E57 /* CitiesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -799,6 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDDF45B204CE8A100706E57 /* CitiesViewModel.swift in Sources */,
 				A2882FAA203C5D6900D66F0D /* CityWeatherTableViewCell.swift in Sources */,
 				A2882F85203C353E00D66F0D /* Main.swift in Sources */,
 				A27E8908203C2BCF000DB52D /* AppDelegate.swift in Sources */,
@@ -825,6 +831,7 @@
 				A2882FAB203C5D6900D66F0D /* CityWeatherTableViewCell.swift in Sources */,
 				A2882FB3203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */,
 				A2882F86203C353E00D66F0D /* Main.swift in Sources */,
+				3DDDF45C204CE8A100706E57 /* CitiesViewModel.swift in Sources */,
 				A2882F80203C353E00D66F0D /* ApiResponse.swift in Sources */,
 				A2882F83203C353E00D66F0D /* Wind.swift in Sources */,
 				A2882FA7203C5BDB00D66F0D /* WeatherDetailsViewModel.swift in Sources */,
@@ -845,6 +852,7 @@
 				A2882FAC203C5D6900D66F0D /* CityWeatherTableViewCell.swift in Sources */,
 				A2882FB4203C5FA600D66F0D /* CityWeatherDetailsView.swift in Sources */,
 				A2882F87203C353E00D66F0D /* Main.swift in Sources */,
+				3DDDF45D204CE8A100706E57 /* CitiesViewModel.swift in Sources */,
 				A2882F81203C353E00D66F0D /* ApiResponse.swift in Sources */,
 				A2882F84203C353E00D66F0D /* Wind.swift in Sources */,
 				A2882FA8203C5BDB00D66F0D /* WeatherDetailsViewModel.swift in Sources */,
