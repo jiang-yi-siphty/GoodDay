@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class CityWeatherDetailsViewController: UIViewController {
 
+    @IBOutlet var refreshBarButtonItem: UIBarButtonItem!
     @IBOutlet var cityWeatherDetailsView: CityWeatherDetailsView!
     public var cityId: Int?
 
@@ -26,5 +29,8 @@ class CityWeatherDetailsViewController: UIViewController {
         cityWeatherDetailsView.cityId = cityId
     }
     
+    private func bindUI(){
+        refreshBarButtonItem.rx.tap
+    }
 }
 

@@ -51,13 +51,6 @@ enum  ApiConfig {
         }
     }
     
-    var path: String {
-        switch self {
-        case .weather( _):
-            return "/s/2iodh4vg0eortkl/facts.json"
-        }
-    }
-    
     var method: String {
         switch self {
         case .weather(_):
